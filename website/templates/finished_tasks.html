@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% if user.is_authenticated %}
+
+    <h1>Hello {{ user.username }}</h1><br/>
+
+    <table class="table table-striped table-hover table-bordered">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Description</th>
+          <th scope="col">Created At</th>
+          <th scope="col">Finish Until</th>
+          <th scope="col">Finished At</th>
+          <th scope="col">Created By</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% if records %}
+            {% for record in records %}
+                {% if record.created_by == user.username or user.is_superuser %}
+                    {% if record.finished_at %}
+                <tr>
+                    <td><a href="{% url 'record' record.id %}">{{record.id}}</a></td>
+                    <td>{{record.task_name}}</td>
+                    <td>{{record.description}}</td>
+                    <td>{{record.created_at|date:'d-m-Y H:i'}}</td>
+                    <td>{{record.finish_until|date:'d-m-Y H:i'}}</td>
+                    <td>{{record.finished_at|date:'d-m-Y H:i'}}</td>
+                    <td>{{record.created_by}}</td>
+                </tr>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+      </tbody>
+    </table>
+
+    {% else %}
+    <div class="col-md-6 offset-md-3">
+    <h1>Login</h1>
+    <br/>
+    <form method="POST" action="{% url 'home' %}">
+        {% csrf_token %}
+    <form>
+      <div class="mb-3">
+        <input type="text" class="form-control" name="username" placeholder="Username" required>
+      </div>
+      <div class="mb-3">
+        <input type="password" class="form-control" name="password" placeholder="Password" required>
+      </div>
+      <button type="submit" class="btn btn-secondary">Login</button>
+    </form>
+    </form>
+    </div>
+
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card">
+  <div class="card-header">
+      <strong>{{task.id}}: {{task.task_name}}</strong>
+  </div>
+  <div class="card-body">
+      <p class="card-text"><strong>Description</strong> {{task.description}}</p>
+    <p class="card-text"><strong>Created at:</strong> {{task.created_at}}</p>
+    <p class="card-text"><strong>Finish by:</strong> {{task.finish_until}}</p>
+    <p class="card-text"><strong>Created by:</strong> {{task.created_by}}</p>
+  </div>
+</div>
+<br/>
+<br/>
+<a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+<a href="{% url 'delete_record' task.id %}" class="btn btn-danger">Delete</a>
+<a href="{% url 'finish_record' task.id %}" class="btn btn-secondary">Finish</a>
+<a href="{% url 'update_record' task.id %}" class="btn btn-secondary">Update</a>
+
+{% endblock %}
