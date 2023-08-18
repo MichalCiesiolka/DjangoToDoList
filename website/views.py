@@ -68,9 +68,13 @@ def list_element(request, pk):
 def delete_record(request, pk):
     if request.user.is_authenticated:
         delete_it = Record.objects.get(id=pk)
-        delete_it.delete()
-        messages.success(request, "Task Deleted")
-        return redirect('home')
+        if request.user.username == delete_it.created_by or request.user.is_superuser:
+            delete_it.delete()
+            messages.success(request, "Task Deleted")
+            return redirect('home')
+        else:
+            messages.success(request, "You can't remove other users' tasks")
+            return redirect('home')
     else:
         messages.success(request, "You must be logged in to delete element")
         return redirect('home')
@@ -79,10 +83,14 @@ def delete_record(request, pk):
 def mark_as_finished(request, pk):
     if request.user.is_authenticated:
         finish_it = Record.objects.get(id=pk)
-        finish_it.finished_at = datetime.datetime.now()
-        finish_it.save(update_fields=["finished_at"])
-        messages.success(request, "Task Finished")
-        return redirect('home')
+        if request.user.username == finish_it.created_by or request.user.is_superuser:
+            finish_it.finished_at = datetime.datetime.now()
+            finish_it.save(update_fields=["finished_at"])
+            messages.success(request, "Task Finished")
+            return redirect('home')
+        else:
+            messages.success(request, "You can't finish other users' tasks")
+            return redirect('home')
     else:
         messages.success(request, "You must be logged in to finish a task")
         return redirect('home')
