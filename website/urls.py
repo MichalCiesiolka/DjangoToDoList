@@ -11,4 +11,6 @@ urlpatterns = [
     path('add_record/', views.add_record, name='add_record'),
     path('update_record/<int:pk>', views.update_record, name='update_record'),
     path('finish_record/<int:pk>', views.mark_as_finished, name='finish_record'),
+    path('restore_record/<int:pk>', views.mark_as_unfinished, name='restore_record'),
+    path('finished_record/<int:pk>', views.finished_element, name='finished_record'),
 ]

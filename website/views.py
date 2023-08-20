@@ -65,6 +65,16 @@ def list_element(request, pk):
         return redirect('home')
 
 
+def finished_element(request, pk):
+    if request.user.is_authenticated:
+        # Show element
+        task = Record.objects.get(id=pk)
+        return render(request, 'finished_record.html', {'task': task})
+    else:
+        messages.success(request, "You must be logged in to view the element")
+        return redirect('home')
+
+
 def delete_record(request, pk):
     if request.user.is_authenticated:
         delete_it = Record.objects.get(id=pk)
@@ -93,6 +103,22 @@ def mark_as_finished(request, pk):
             return redirect('home')
     else:
         messages.success(request, "You must be logged in to finish a task")
+        return redirect('home')
+
+
+def mark_as_unfinished(request, pk):
+    if request.user.is_authenticated:
+        finish_it = Record.objects.get(id=pk)
+        if request.user.username == finish_it.created_by or request.user.is_superuser:
+            finish_it.finished_at = None
+            finish_it.save(update_fields=["finished_at"])
+            messages.success(request, "Task Restored")
+            return redirect('home')
+        else:
+            messages.success(request, "You can't restore other users' tasks")
+            return redirect('home')
+    else:
+        messages.success(request, "You must be logged in to restore a task")
         return redirect('home')
 
 

@@ -4,7 +4,7 @@
 
     {% if user.is_authenticated %}
 
-    <h1>Hello {{ user.username }}</h1><br/>
+    <h1>Hello {{ user.username }}! This is a list of your finished tasks. Good Job!</h1><br/>
 
     <table class="table table-striped table-hover table-bordered">
       <thead class="table-dark">
@@ -24,7 +24,7 @@
                 {% if record.created_by == user.username or user.is_superuser %}
                     {% if record.finished_at %}
                 <tr>
-                    <td><a href="{% url 'record' record.id %}">{{record.id}}</a></td>
+                    <td><a href="{% url 'finished_record' record.id %}">{{record.id}}</a></td>
                     <td>{{record.task_name}}</td>
                     <td>{{record.description}}</td>
                     <td>{{record.created_at|date:'d-m-Y H:i'}}</td>
