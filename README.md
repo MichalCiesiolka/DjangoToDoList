@@ -32,19 +32,19 @@ The Django To-Do List project aims to provide a task management system with user
 ### Screenshots
 
 - List of active tasks
-![regular_view](https://github.com/MichalCiesiolka/DjangoToDoList/assets/114651792/d2dbd14b-ecc0-4079-8c5d-49503113d34e)
-- Admim point of view
-![admin_view](https://github.com/MichalCiesiolka/DjangoToDoList/assets/114651792/8288ec58-9cfa-469a-9b5a-5118139266b8)
+- ![regular_view](https://github.com/MichalCiesiolka/DjangoToDoList/assets/114651792/d2dbd14b-ecc0-4079-8c5d-49503113d34e)
+- Admin point of view
+- ![admin_view](https://github.com/MichalCiesiolka/DjangoToDoList/assets/114651792/8288ec58-9cfa-469a-9b5a-5118139266b8)
 - View of single task
-![task_view](https://github.com/MichalCiesiolka/DjangoToDoList/assets/114651792/0f0de863-23a2-46e0-95ac-7a33b67de4e7)
+- ![task_view](https://github.com/MichalCiesiolka/DjangoToDoList/assets/114651792/0f0de863-23a2-46e0-95ac-7a33b67de4e7)
 - Update task view
-![update_task](https://github.com/MichalCiesiolka/DjangoToDoList/assets/114651792/d346769a-78a7-4cae-a784-62913f327b65)
+- ![update_task](https://github.com/MichalCiesiolka/DjangoToDoList/assets/114651792/d346769a-78a7-4cae-a784-62913f327b65)
 - Confirm deletion popup
-![Confirm_delete](https://github.com/MichalCiesiolka/DjangoToDoList/assets/114651792/b9c277ef-1398-4a83-9bbc-d43b19369fee)
+- ![Confirm_delete](https://github.com/MichalCiesiolka/DjangoToDoList/assets/114651792/b9c277ef-1398-4a83-9bbc-d43b19369fee)
 - Add new task view
-![add_task](https://github.com/MichalCiesiolka/DjangoToDoList/assets/114651792/0bbd83d9-d277-499b-8778-6dbb537067e6)
+- ![add_task](https://github.com/MichalCiesiolka/DjangoToDoList/assets/114651792/0bbd83d9-d277-499b-8778-6dbb537067e6)
 - Popup after finishing a task
-![finished_popup](https://github.com/MichalCiesiolka/DjangoToDoList/assets/114651792/ef9214b7-e6ba-4d32-b993-6359c16dcb3e)
+- ![finished_popup](https://github.com/MichalCiesiolka/DjangoToDoList/assets/114651792/ef9214b7-e6ba-4d32-b993-6359c16dcb3e)
 
 
 
