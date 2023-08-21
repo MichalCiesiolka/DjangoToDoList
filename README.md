@@ -28,3 +28,14 @@ The Django To-Do List project aims to provide a task management system with user
 ### Admin Access:
 - Administrators have special privileges to manage all tasks regardless of the creator.
 - Admins can view, edit, and delete all tasks.
+
+![regular_view](https://github.com/MichalCiesiolka/DjangoToDoList/assets/114651792/d2dbd14b-ecc0-4079-8c5d-49503113d34e)
+![admin_view](https://github.com/MichalCiesiolka/DjangoToDoList/assets/114651792/8288ec58-9cfa-469a-9b5a-5118139266b8)
+![task_view](https://github.com/MichalCiesiolka/DjangoToDoList/assets/114651792/0f0de863-23a2-46e0-95ac-7a33b67de4e7)
+![update_task](https://github.com/MichalCiesiolka/DjangoToDoList/assets/114651792/d346769a-78a7-4cae-a784-62913f327b65)
+![Confirm_delete](https://github.com/MichalCiesiolka/DjangoToDoList/assets/114651792/b9c277ef-1398-4a83-9bbc-d43b19369fee)
+![add_task](https://github.com/MichalCiesiolka/DjangoToDoList/assets/114651792/0bbd83d9-d277-499b-8778-6dbb537067e6)
+![finished_popup](https://github.com/MichalCiesiolka/DjangoToDoList/assets/114651792/ef9214b7-e6ba-4d32-b993-6359c16dcb3e)
+
+
+
