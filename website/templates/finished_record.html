@@ -3,7 +3,7 @@
 
 <div class="card">
   <div class="card-header">
-      <strong>{{task.id}}: {{task.task_name}}</strong>
+      <strong>{{task.task_name}}</strong>
   </div>
   <div class="card-body">
       <p class="card-text"><strong>Description</strong> {{task.description}}</p>
@@ -17,6 +17,6 @@
 <a href="{% url 'finished_tasks' %}" class="btn btn-secondary">Back</a>
 <a href="{% url 'delete_record' task.id %} " onclick="return confirm('Are you sure you want to delete this task?')" class="btn btn-danger">Delete</a>
 <a href="{% url 'restore_record' task.id %}" onclick="return confirm('Are you sure you want to restore this task?')" class="btn btn-success">Restore</a>
-<a href="{% url 'update_record' task.id %}" class="btn btn-primary">Update</a>
+<a href="{% url 'update_finished_record' task.id %}" class="btn btn-primary">Update</a>
 
 {% endblock %}

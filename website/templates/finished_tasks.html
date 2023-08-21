@@ -9,7 +9,7 @@
     <table class="table table-striped table-hover table-bordered">
       <thead class="table-dark">
         <tr>
-          <th scope="col">ID</th>
+<!--          <th scope="col">ID</th>-->
           <th scope="col">Name</th>
           <th scope="col">Description</th>
           <th scope="col">Created At</th>
@@ -24,8 +24,8 @@
                 {% if record.created_by == user.username or user.is_superuser %}
                     {% if record.finished_at %}
                 <tr>
-                    <td><a href="{% url 'finished_record' record.id %}">{{record.id}}</a></td>
-                    <td>{{record.task_name}}</td>
+<!--                    <td><a href="{% url 'finished_record' record.id %}">{{record.id}}</a></td>-->
+                    <td><a href="{% url 'finished_record' record.id %}">{{record.task_name}}</a></td>
                     <td>{{record.description}}</td>
                     <td>{{record.created_at|date:'d-m-Y H:i'}}</td>
                     <td>{{record.finish_until|date:'d-m-Y H:i'}}</td>
